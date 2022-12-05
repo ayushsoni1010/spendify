@@ -5,10 +5,10 @@ import {
   Image,
   Text,
   useColorModeValue,
-} from '@chakra-ui/react';
-import React from 'react';
-import BaseLayout from '../../layouts/BaseLayout';
-import gradient from '../../assets/svgs/gradient-3.webp';
+} from "@chakra-ui/react";
+import React from "react";
+import BaseBox from "../../modules/components/BaseBox";
+import gradient from "../../assets/svgs/gradient-3.webp";
 
 const Hero = () => {
   return (
@@ -16,17 +16,17 @@ const Hero = () => {
       {/* <Box position="absolute" zIndex="-1" backdropFilter="10px">
         <Image h="100vh" w="100vw" src={gradient} alt="Gradient" opacity="0.1" />
       </Box> */}
-      <BaseLayout position="relative">
+      <BaseBox position="relative">
         <HStack m="auto" my="12">
           <Button
             m="auto"
-            as={'a'}
+            as={"a"}
             href="https://github.com/ayushsoni1010/spendify"
             target="_blank"
             textDecoration="none"
-            style={{ textDecoration: 'none' }}
+            style={{ textDecoration: "none" }}
             borderRadius="full"
-            border={'2px'}
+            border={"2px"}
             borderColor="blue.600"
             h="35px"
           >
@@ -47,18 +47,18 @@ const Hero = () => {
         </HStack>
         <Text
           bgGradient={useColorModeValue(
-            'linear(to-r, blue.400, purple.800, blue.300)',
-            'linear(to-r, cyan.400,white, cyan.400)'
+            "linear(to-r, blue.400, purple.800, blue.300)",
+            "linear(to-r, cyan.400,white, cyan.400)"
           )}
           bgClip="text"
-          fontSize={{ base: '7xl', md: '7xl', sm: '3xl' }}
+          fontSize={{ base: "7xl", md: "7xl", sm: "3xl" }}
           fontWeight="700"
           textAlign="center"
         >
           Get your spending money under control and manage
         </Text>
         <Text
-          fontSize={{ base: 'xl', md: 'xl', sm: 'md' }}
+          fontSize={{ base: "xl", md: "xl", sm: "md" }}
           colorScheme="white"
           textAlign="center"
           px={{ base: 60, md: 60, sm: 10 }}
@@ -66,7 +66,7 @@ const Hero = () => {
         >
           Control your budgets, spending and personal finances
         </Text>
-      </BaseLayout>
+      </BaseBox>
     </React.Fragment>
   );
 };
