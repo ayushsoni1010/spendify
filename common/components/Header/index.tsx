@@ -1,10 +1,9 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
-import { ColorModeSwitcher } from '../../ColorModeSwitcher';
+import Link from 'next/link';
+// import { ColorModeSwitcher } from '../../ColorModeSwitcher';
 import {
   Box,
   Flex,
-  Link,
   Stack,
   Button,
   Text,
@@ -27,9 +26,8 @@ const Header: React.FunctionComponent = () => {
           alignSelf="center"
         >
           <Link
-            as={NavLink}
-            to="/"
-            textDecoration="none"
+            href="/"
+            passHref
             style={{ textDecoration: 'none' }}
           >
             <Stack
@@ -60,14 +58,15 @@ const Header: React.FunctionComponent = () => {
               base: 0,
             }}
           >
-            <ColorModeSwitcher
+            {/* <ColorModeSwitcher
               justifySelf="flex-end"
               display={{ base: 'none', md: 'inline-flex' }}
-            />
+            /> */}
             <ButtonGroup>
               <Button
-                as={NavLink}
-                to="/login"
+                as={Link}
+                href="/login"
+                passHref
                 border="2px"
                 variant="outline"
                 size="md"
@@ -78,8 +77,9 @@ const Header: React.FunctionComponent = () => {
               <Button
                 // bgColor="blue.500"
                 colorScheme="blue"
-                as={NavLink}
-                to="/signup"
+                as={Link}
+                href="/signup"
+                passHref
                 variant="solid"
                 size="md"
               >

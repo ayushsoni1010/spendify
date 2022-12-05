@@ -5,14 +5,13 @@ import {
   ListIcon,
   ListItem,
   Stack,
-  Link,
   Text,
-} from '@chakra-ui/react';
-import React from 'react';
-import { NavLink } from 'react-router-dom';
-import { ColorModeSwitcher } from '../../ColorModeSwitcher';
-import Logo from '../Logo';
-import { sidebarDetails } from './__sidebarDetails';
+} from "@chakra-ui/react";
+import React from "react";
+import Link from "next/link";
+// import { ColorModeSwitcher } from "../../ColorModeSwitcher";
+import Logo from "../Logo";
+import { sidebarDetails } from "./__sidebarDetails";
 
 const Sidebar = () => {
   return (
@@ -26,12 +25,7 @@ const Sidebar = () => {
           cursor="pointer"
           px="1"
         >
-          <Link
-            as='a'
-            href="/"
-            textDecoration="none"
-            style={{ textDecoration: 'none' }}
-          >
+          <Link href="/" passHref style={{ textDecoration: "none" }}>
             <Flex
               justify="start"
               direction="row"
@@ -41,7 +35,7 @@ const Sidebar = () => {
             >
               <Logo />
               <Text
-                fontFamily={'heading'}
+                fontFamily={"heading"}
                 fontSize="2xl"
                 fontWeight="extrabold"
                 colorScheme="white"
@@ -56,19 +50,18 @@ const Sidebar = () => {
             return (
               <List
                 key={index}
-                _hover={{ bg: 'blue.400', color: 'white' }}
+                _hover={{ bg: "blue.400", color: "white" }}
                 p="1"
                 px="2"
                 borderRadius="4px"
               >
                 <Link
-                  as={NavLink}
-                  to={item.url}
-                  textDecoration="none"
-                  style={{ textDecoration: 'none' }}
+                  href={item.url}
+                  passHref
+                  style={{ textDecoration: "none" }}
                 >
                   <ListItem
-                    _hover={{ color: 'white' }}
+                    _hover={{ color: "white" }}
                     fontSize="sm"
                     fontWeight="500"
                   >
@@ -82,7 +75,7 @@ const Sidebar = () => {
             );
           })}
         </Stack>
-        <ColorModeSwitcher />
+        {/* <ColorModeSwitcher /> */}
       </Box>
     </React.Fragment>
   );
