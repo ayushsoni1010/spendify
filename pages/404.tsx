@@ -1,0 +1,40 @@
+import {
+  Box,
+  Button,
+  Container,
+  Divider,
+  Heading,
+  Text,
+} from "@chakra-ui/react";
+import { NextPage } from "next";
+import NextLink from "next/link";
+import React from "react";
+import BaseBox from "../modules/components/BaseBox";
+
+const NotFound: NextPage = () => {
+  return (
+    <React.Fragment>
+      <BaseBox>
+        <Container m="auto" mt="20">
+          <Heading as="h1">Not Found</Heading>
+          <Text>The page you&apos;re looking for was not found</Text>
+          <Divider my="6" />
+          <Box my="6">
+            <NextLink href="/" passHref>
+              <Button
+                type="button"
+                variant="solid"
+                colorScheme="blue"
+                bgGradient="linear(to-r, blue.400, purple.500)"
+              >
+                Return to home
+              </Button>
+            </NextLink>
+          </Box>
+        </Container>
+      </BaseBox>
+    </React.Fragment>
+  );
+};
+
+export default NotFound;
