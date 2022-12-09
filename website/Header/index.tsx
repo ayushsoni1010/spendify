@@ -24,7 +24,7 @@ const Header: React.FunctionComponent = () => {
   };
   return (
     <React.Fragment>
-      <Box position="fixed" top="0" zIndex="10" minW="100%" px="10">
+      <Box position="fixed" top="0" zIndex="10" minW="100%" px="20">
         <Flex
           backdropFilter="blur(4px)"
           border="none"

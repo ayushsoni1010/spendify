@@ -1,18 +1,18 @@
 export const linkDetails: any[] = [
   {
-    name: 'Features',
-    link: '/features',
+    name: "Features",
+    link: "/features",
   },
   {
-    name: 'Open Source',
-    link: '/opensource',
+    name: "Open Source",
+    link: "/opensource",
   },
   {
-    name: 'Sponsor',
-    link: '/Sponsor',
+    name: "Sponsor",
+    link: "/sponsor",
   },
   {
-    name: 'About Us',
-    link: '/about',
+    name: "About Us",
+    link: "/about",
   },
 ];
