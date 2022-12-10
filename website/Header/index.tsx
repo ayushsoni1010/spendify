@@ -1,6 +1,8 @@
+// Basic Imports
 import React, { useState } from "react";
 import Link from "next/link";
-// import { ColorModeSwitcher } from "../../ColorModeSwitcher";
+
+// Chakra UI Imports
 import {
   Box,
   Flex,
@@ -10,18 +12,23 @@ import {
   ButtonGroup,
   IconButton,
 } from "@chakra-ui/react";
-import { FiMenu } from "react-icons/fi";
-import Logo from "../../common/components/Logo";
+
+// Components Imports
+import Logo from "@/common/components/Logo";
 import NavItems from "./NavItems";
 import CollapseMenu from "./CollapseMenu";
+import ColorModeSwitcher from "@/website/ColorModeSwitcher";
+
+// Icon Imports
+import { FiMenu } from "react-icons/fi";
 
 const Header: React.FunctionComponent = () => {
   const [isOpen, setOpen] = useState(false);
 
   const handleToggle = () => {
-    console.log("changed");
     setOpen((prevState: boolean) => !prevState);
   };
+
   return (
     <React.Fragment>
       <Box position="fixed" top="0" zIndex="10" minW="100%" px="20">
@@ -70,10 +77,7 @@ const Header: React.FunctionComponent = () => {
               base: 0,
             }}
           >
-            {/* <ColorModeSwitcher
-              justifySelf="flex-end"
-              display={{ base: "none", md: "inline-flex", sm: "inline-flex" }}
-            /> */}
+            <ColorModeSwitcher />
             <Box display={{ md: "none", lg: "none" }}>
               <IconButton
                 variant="outline"
