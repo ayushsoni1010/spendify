@@ -1,14 +1,16 @@
+// Basic Imports
 import React, { createContext, useContext, useEffect, useState } from "react";
+
+// Components Imports
 import {
   onAuthStateChanged,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   signOut,
 } from "firebase/auth";
-import { auth } from "../config/firebase";
+import { auth } from "@/config/firebase";
 
 const AuthContext = createContext<any>({});
-
 export const useAuth = () => useContext(AuthContext);
 
 const AuthContextProvider = ({ children }: { children: React.ReactNode }) => {

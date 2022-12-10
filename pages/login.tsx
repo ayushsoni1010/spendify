@@ -1,17 +1,20 @@
+// Basic Imports
+import React, { useState } from "react";
+import { useRouter } from "next/router";
+import { NextPage } from "next";
+
+// Chakra UI Imports
 import {
   Box,
   Text,
   FormControl,
   FormLabel,
-  FormErrorMessage,
-  FormHelperText,
   Input,
   Button,
 } from "@chakra-ui/react";
-import { useAuth } from "../context/AuthContext";
-import React, { useState } from "react";
-import { useRouter } from "next/router";
-import { NextPage } from "next";
+
+// Components Imports
+import { useAuth } from "@/context/AuthContext";
 
 const Login: NextPage = () => {
   const router = useRouter();
@@ -25,12 +28,11 @@ const Login: NextPage = () => {
 
   const handleLogin = async (e: any) => {
     e.preventDefault();
-    console.log(data.email, data.password, 1010);
     try {
       await login(data.email, data.password);
-      router.push("/dashboard");
+      router.push("/app/dashboard");
     } catch (error) {
-      console.log(error);
+      throw new Error(`Error: ${error}`);
     }
   };
 

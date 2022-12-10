@@ -1,6 +1,9 @@
-import { NextPage } from "next";
+// Basic Imports
 import Head from "next/head";
-import Header from "../website/Header";
+import { NextPage } from "next";
+
+// Components Imports
+import Header from "@/website/Header";
 
 const Home: NextPage = () => {
   return (

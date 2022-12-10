@@ -1,17 +1,20 @@
+// Basic Imports
+import React, { useState } from "react";
+import { NextPage } from "next";
+import { useRouter } from "next/router";
+
+// Chakra UI Imports
 import {
   Box,
   Text,
   FormControl,
   FormLabel,
-  FormErrorMessage,
-  FormHelperText,
   Input,
   Button,
 } from "@chakra-ui/react";
-import { NextPage } from "next";
-import Router, { useRouter } from "next/router";
-import React, { useState } from "react";
-import { useAuth } from "../context/AuthContext";
+
+// Components Imports
+import { useAuth } from "@/context/AuthContext";
 
 const Signup: NextPage = () => {
   const router = useRouter();

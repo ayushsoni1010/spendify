@@ -1,8 +1,13 @@
-import { ColorModeScript } from "@chakra-ui/react";
+// Basic Imports
 import { Html, Head, Main, NextScript } from "next/document";
-import { theme } from "../common/utils/theme";
 
-export default function Document() {
+// Chakra UI Imports
+import { ColorModeScript } from "@chakra-ui/react";
+
+// Components Imports
+import { theme } from "@/common/utils/theme";
+
+const Document: React.FunctionComponent = () => {
   return (
     <Html lang="en">
       <Head />
@@ -14,4 +19,6 @@ export default function Document() {
       </body>
     </Html>
   );
-}
+};
+
+export default Document;
