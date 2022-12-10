@@ -13,8 +13,23 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
-    "incremental": true
+    "incremental": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/common/*": ["common/*"],
+      "@/context/*": ["context/*"],
+      "@/config/*": ["config/*"],
+      "@/routers/*": ["routers/*"],
+      "@/modules/*": ["modules/*"],
+      "@/website/*": ["website/*"],
+      "@/styles/*": ["styles/*"]
+    }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "common/components/Sidebar/__sidebarDetails.js"
+  ],
   "exclude": ["node_modules"]
 }
