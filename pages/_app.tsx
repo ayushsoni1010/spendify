@@ -6,7 +6,7 @@ import type { AppProps } from "next/app";
 import { ChakraProvider } from "@chakra-ui/react";
 
 // Components Imports
-import AuthContextProvider from "@/context/AuthContext";
+import AuthContextProvider from "@/context/auth/AuthContext";
 import ProtectedRoutes from "@/routers/ProtectedRouter";
 import { theme } from "@/common/utils/theme";
 

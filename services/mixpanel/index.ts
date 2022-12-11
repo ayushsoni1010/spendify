@@ -1,4 +1,6 @@
+// Library Imports
 import mixpanel from "mixpanel-browser";
+
 // or with require() syntax:
 // const mixpanel = require('mixpanel-browser');
 

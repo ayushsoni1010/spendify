@@ -3,12 +3,12 @@ import { toast } from "react-toastify";
 
 const jwt = require("jsonwebtoken");
 
-const common: any = {
+const helpers: any = {
   /***** Axios base URL *****/
-  apiURL:
-    process.env.NODE_ENV === "development"
-      ? `http://${window.location.hostname}:5000`
-      : `https://${window.location.hostname}`,
+  // apiURL:
+  //   process.env.NODE_ENV === "development"
+  //     ? `http://${window.location.hostname}:5000`
+  //     : `https://${window.location.hostname}`,
 
   /***** Hardcoded RegEx for Email validations *****/
   validEmail: (email: string): boolean => {
@@ -48,3 +48,5 @@ const common: any = {
     return token;
   },
 };
+
+export { helpers };

@@ -14,7 +14,7 @@ import {
 } from "@chakra-ui/react";
 
 // Components Imports
-import { useAuth } from "@/context/AuthContext";
+import { useAuth } from "@/context/auth/AuthContext";
 
 const Signup: NextPage = () => {
   const router = useRouter();

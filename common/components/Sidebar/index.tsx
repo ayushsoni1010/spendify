@@ -24,7 +24,7 @@ import {
 
 // Components Imports
 import Logo from "@/common/components/Logo";
-import { useAuth } from "@/context/AuthContext";
+import { useAuth } from "@/context/auth/AuthContext";
 import { sidebarDetails } from "./__sidebarDetails";
 
 // Icon Imports
