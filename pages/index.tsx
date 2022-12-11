@@ -4,6 +4,7 @@ import { NextPage } from "next";
 
 // Components Imports
 import Header from "@/website/Header";
+import Hero from "@/website/Hero";
 
 const Home: NextPage = () => {
   return (
@@ -16,6 +17,7 @@ const Home: NextPage = () => {
 
       <main>
         <Header />
+        <Hero />
       </main>
 
       <footer></footer>
