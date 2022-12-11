@@ -1,3 +1,7 @@
+// Basic Imports
+import React from "react";
+
+// Chakra UI Imports
 import {
   Box,
   Button,
@@ -6,21 +10,18 @@ import {
   Text,
   useColorModeValue,
 } from "@chakra-ui/react";
-import React from "react";
-import BaseBox from "../../modules/components/BaseBox";
-import gradient from "../../assets/svgs/gradient-3.webp";
 
-const Hero = () => {
+// Components Imports
+import BaseBox from "@/modules/components/BaseBox";
+
+const Hero: React.FunctionComponent = () => {
   return (
     <React.Fragment>
-      {/* <Box position="absolute" zIndex="-1" backdropFilter="10px">
-        <Image h="100vh" w="100vw" src={gradient} alt="Gradient" opacity="0.1" />
-      </Box> */}
       <BaseBox position="relative">
         <HStack m="auto" my="12">
           <Button
             m="auto"
-            as={"a"}
+            as="a"
             href="https://github.com/ayushsoni1010/spendify"
             target="_blank"
             textDecoration="none"
@@ -34,14 +35,14 @@ const Hero = () => {
               <Text size="sm" fontWeight="semibold">
                 Support us by becoming a stargazer🚀
               </Text>
-              {/* <Image
+              <Image
                 src="https://img.shields.io/github/stars/ayushsoni1010/spendify.svg?style=social&label=Star"
                 alt="Repository Star"
-              /> */}
-              <Image
+              />
+              {/* <Image
                 src="https://img.shields.io/github/stars/saas-js/saas-ui.svg?style=social&label=Star"
                 alt="Repository Star"
-              />
+              /> */}
             </HStack>
           </Button>
         </HStack>

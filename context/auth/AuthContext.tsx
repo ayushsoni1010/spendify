@@ -1,14 +1,18 @@
+// Basic Imports
 import React, { createContext, useContext, useEffect, useState } from "react";
+
+// Library Imports
 import {
   onAuthStateChanged,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   signOut,
 } from "firebase/auth";
-import { auth } from "../config/firebase";
+
+// Component Imports
+import { auth } from "@/services/firebase";
 
 const AuthContext = createContext<any>({});
-
 export const useAuth = () => useContext(AuthContext);
 
 const AuthContextProvider = ({ children }: { children: React.ReactNode }) => {
@@ -32,12 +36,12 @@ const AuthContextProvider = ({ children }: { children: React.ReactNode }) => {
     return () => unsubscribe();
   }, []);
 
-  const signup = (email: string, password: string) => {
-    createUserWithEmailAndPassword(auth, email, password);
+  const signup = async (email: string, password: string) => {
+    await createUserWithEmailAndPassword(auth, email, password);
   };
 
-  const login = (email: string, password: string) => {
-    signInWithEmailAndPassword(auth, email, password);
+  const login = async (email: string, password: string) => {
+    await signInWithEmailAndPassword(auth, email, password);
   };
 
   const logout = async () => {

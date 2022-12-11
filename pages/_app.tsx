@@ -1,10 +1,17 @@
-import type { AppProps } from "next/app";
-import { ChakraProvider } from "@chakra-ui/react";
-import { theme } from "../common/utils/theme";
-import "../styles/globals.css";
-import AuthContextProvider from "../context/AuthContext";
-import ProtectedRoutes from "../routers/ProtectedRouter";
+// Basic Imports
 import { useRouter } from "next/router";
+import type { AppProps } from "next/app";
+
+// Chakra UI Imports
+import { ChakraProvider } from "@chakra-ui/react";
+
+// Components Imports
+import AuthContextProvider from "@/context/auth/AuthContext";
+import ProtectedRoutes from "@/routers/ProtectedRouter";
+import { theme } from "@/common/utils/theme";
+
+// Styles Import
+import "@/styles/globals.css";
 
 export default function App({ Component, pageProps }: AppProps) {
   const router = useRouter();

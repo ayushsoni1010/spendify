@@ -1,3 +1,9 @@
+// Basic Imports
+import React from "react";
+import { NextPage } from "next";
+import NextLink from "next/link";
+
+// Chakra UI Imports
 import {
   Box,
   Button,
@@ -6,10 +12,9 @@ import {
   Heading,
   Text,
 } from "@chakra-ui/react";
-import { NextPage } from "next";
-import NextLink from "next/link";
-import React from "react";
-import BaseBox from "../modules/components/BaseBox";
+
+// Components Imports
+import BaseBox from "@/modules/components/BaseBox";
 
 const Custom500: NextPage = () => {
   return (

@@ -1,4 +1,7 @@
+// Basic Imports
 import React from "react";
+
+// Chakra UI Imports
 import { Box, BoxProps } from "@chakra-ui/react";
 
 const BaseBox: React.FunctionComponent<BoxProps> = ({ children, ...props }) => {
