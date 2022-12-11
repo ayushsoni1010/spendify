@@ -1,0 +1,165 @@
+:root {
+  scroll-behavior: smooth;
+}
+
+/***** Show custom scrollbar on screen *****/
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+  display: unset;
+}
+
+::-webkit-scrollbar-button {
+  height: 0;
+  width: 0;
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--chakra-colors-blue-400);
+}
+
+::-webkit-scrollbar-track {
+  background: white;
+}
+
+:root {
+  --blue-900: #060040;
+  --blue-800: #030380;
+  --blue-700: #08109c;
+  --blue-600: #1836ce;
+  --blue-500: #2a52e2;
+  --blue-400: #6291ef;
+  --blue-300: #83aff4;
+  --blue-200: #c7e1fb;
+  --blue-100: #eaf5fe;
+  --red-900: #610a3b;
+  --red-800: #881348;
+  --red-700: #b01e51;
+  --red-600: #d22d58;
+  --red-500: #ef3e5e;
+  --red-400: #f36a73;
+  --red-300: #f79b96;
+  --red-200: #fbccc3;
+  --red-100: #fef4ef;
+  --yellow-100: #fef3c7;
+  --yellow-200: #fde68a;
+  --yellow-300: #fcd34d;
+  --yellow-400: #fbbf24;
+  --yellow-500: #f59e0b;
+  --yellow-600: #d97706;
+  --yellow-700: #b45309;
+  --yellow-800: #92400e;
+  --yellow-900: #78350f;
+  --purple-100: #ede9fe;
+  --purple-200: #ddd6fe;
+  --purple-300: #c4b5fd;
+  --purple-400: #a78bfa;
+  --purple-500: #8b5cf6;
+  --purple-600: #7c3aed;
+  --purple-700: #6d28d9;
+  --purple-800: #5b21b6;
+  --purple-900: #4c1d95;
+  --pink-100: #fce7f3;
+  --pink-200: #fbcfe8;
+  --pink-300: #f9a8d4;
+  --pink-400: #f472b6;
+  --pink-500: #ec4899;
+  --pink-600: #db2777;
+  --pink-700: #be185d;
+  --pink-800: #9d174d;
+  --pink-900: #831843;
+  --green-900: #00151b;
+  --green-800: #034549;
+  --green-700: #09736a;
+  --green-600: #129a7c;
+  --green-500: #24bd85;
+  --green-400: #4dd39c;
+  --green-300: #7fe5b6;
+  --green-200: #b4f2d3;
+  --green-100: #edfdf4;
+  --gray-900: #141414;
+  --gray-840: #1b1a1a;
+  --gray-830: #1f1f22;
+  --gray-820: #29292c;
+  --gray-810: #2f2f33;
+  --gray-800: #3c3c42;
+  --gray-700: #63626b;
+  --gray-600: #8a8894;
+  --gray-500: #b2aebc;
+  --gray-400: #c3c0cd;
+  --gray-300: #d4d2dd;
+  --gray-200: #f0f0f5;
+  --gray-100: #f9f9fb;
+  --primary-100: var(--blue-100);
+  --primary-200: var(--blue-200);
+  --primary-300: var(--blue-300);
+  --primary-400: var(--blue-400);
+  --primary-500: var(--blue-500);
+  --primary-600: var(--blue-600);
+  --primary-700: var(--blue-700);
+  --primary-800: var(--blue-800);
+  --primary-900: var(--blue-900);
+}
+
+/*****  100 vh fix for mobile *****/
+
+$fullvh: var(--full-vh, 100vh);
+$vh: var(--vh, 1vh);
+
+/***** Breakpoints and breakpoint mixins *****/
+
+$bp-sm: 600px;
+$bp-md: 900px;
+$bp-lg: 1200px;
+
+@mixin desktop {
+  @media (min-width: $bp-md) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (max-width: #{$bp-md - 1px}) {
+    @content;
+  }
+}
+
+@mixin sm {
+  @media (min-width: $bp-sm) {
+    @content;
+  }
+}
+
+@mixin md {
+  @media (min-width: $bp-md) {
+    @content;
+  }
+}
+
+@mixin lg {
+  @media (min-width: $bp-lg) {
+    @content;
+  }
+}
+
+@mixin min-width($mw) {
+  @media (min-width: $mw) {
+    @content;
+  }
+}
+
+/***** Navbar Brand Logo *****/
+
+.navbar-brand {
+  animation: brandAnimation 2s linear infinite alternate both;
+}
+@keyframes brandAnimation {
+  0% {
+    color: var(--blue-300);
+  }
+  100% {
+    color: var(--blue-800);
+  }
+}
