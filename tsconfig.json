@@ -21,6 +21,8 @@
       "@/config/*": ["config/*"],
       "@/routers/*": ["routers/*"],
       "@/modules/*": ["modules/*"],
+      "@/helpers/*": ["helpers/*"],
+      "@/services/*": ["services/*"],
       "@/website/*": ["website/*"],
       "@/styles/*": ["styles/*"]
     }
