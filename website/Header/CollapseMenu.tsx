@@ -1,17 +1,31 @@
 // Basic Imports
 import React from "react";
+import Link from "next/link";
+import { useRouter } from "next/router";
 
 // Chakra UI Imports
 import {
+  Avatar,
   Box,
   Button,
   ButtonGroup,
   Collapse,
+  HStack,
+  Menu,
+  MenuButton,
+  MenuItem,
+  MenuList,
   Stack,
   useColorModeValue,
 } from "@chakra-ui/react";
+
+// Components Imports
+import { useAuth } from "@/context/auth/AuthContext";
 import { linkDetails } from "./__linkDeatils";
-import Link from "next/link";
+
+// Icon Imports
+import { GrUserSettings } from "react-icons/gr";
+import { HiOutlineLogout } from "react-icons/hi";
 
 interface SidebarProps {
   isOpen: boolean;
@@ -22,6 +36,15 @@ const CollapseMenu: React.FunctionComponent<SidebarProps> = ({
   isOpen,
   setOpen,
 }) => {
+  const { user, logout } = useAuth();
+  const router = useRouter();
+
+  const logoutUser = () => {
+    logout();
+    router.push("/");
+    setOpen();
+  };
+
   return (
     <React.Fragment>
       <Collapse in={isOpen}>
@@ -62,33 +85,109 @@ const CollapseMenu: React.FunctionComponent<SidebarProps> = ({
               )
             )}
           </Stack>
-          <ButtonGroup display={{ sm: "flex" }}>
-            <Button
-              as={Link}
-              href="/login"
-              passHref
-              border="2px"
-              variant="outline"
-              size="sm"
-              onClick={setOpen}
-              colorScheme="blue"
-              _focus={{ boxShadow: "outline" }}
-            >
-              Log in
-            </Button>
-            <Button
-              as={Link}
-              href="/signup"
-              passHref
-              variant="solid"
-              size="sm"
-              colorScheme="blue"
-              onClick={setOpen}
-              _focus={{ boxShadow: "outline" }}
-            >
-              Sign up
-            </Button>
-          </ButtonGroup>
+          <Box
+            display={{
+              base: "none",
+              md: "none",
+              sm: "flex",
+              xs: "flex",
+            }}
+          >
+            {!user ? (
+              <>
+                <ButtonGroup>
+                  <Button
+                    as={Link}
+                    href="/login"
+                    passHref
+                    border="2px"
+                    variant="outline"
+                    size={{
+                      base: "md",
+                      xl: "md",
+                      lg: "md",
+                      sm: "sm",
+                      xs: "sm",
+                    }}
+                    colorScheme="blue"
+                    _focus={{ boxShadow: "outline" }}
+                  >
+                    Log in
+                  </Button>
+                  <Button
+                    colorScheme="blue"
+                    as={Link}
+                    href="/signup"
+                    passHref
+                    variant="solid"
+                    size={{
+                      base: "md",
+                      xl: "md",
+                      lg: "md",
+                      sm: "sm",
+                      xs: "sm",
+                    }}
+                    _focus={{ boxShadow: "outline" }}
+                  >
+                    Sign up
+                  </Button>
+                </ButtonGroup>
+              </>
+            ) : (
+              <>
+                <HStack gap="2">
+                  <Button
+                    colorScheme="blue"
+                    as={Link}
+                    href="/app/dashboard"
+                    passHref
+                    variant="solid"
+                    size={{
+                      base: "md",
+                      xl: "md",
+                      lg: "md",
+                      sm: "sm",
+                      xs: "sm",
+                    }}
+                    _focus={{ boxShadow: "outline" }}
+                  >
+                    {`Continue as ${localStorage.getItem("userFirstName")}` ??
+                      `Get Started`}
+                  </Button>
+                  <Menu>
+                    <MenuButton
+                      as={Avatar}
+                      aria-label="User Account"
+                      size="sm"
+                      cursor="pointer"
+                      name={
+                        `${localStorage.getItem(
+                          "userFirstName"
+                        )} ${localStorage.getItem("userLastName")}` ?? "Test"
+                      }
+                      src="https://github.com/ayushsoni1010.png"
+                    />
+                    <MenuList>
+                      <MenuItem
+                        style={{ margin: 0 }}
+                        onClick={() => router.push("/app/settings")}
+                        icon={<GrUserSettings />}
+                      >
+                        Settings
+                      </MenuItem>
+                      <MenuItem
+                        style={{ margin: 0 }}
+                        onClick={() => logoutUser()}
+                        icon={<HiOutlineLogout />}
+                      >
+                        Logout
+                      </MenuItem>
+                    </MenuList>
+                  </Menu>
+                </HStack>
+              </>
+            )}
+          </Box>
         </Box>
       </Collapse>
     </React.Fragment>
