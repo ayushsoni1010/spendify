@@ -161,21 +161,19 @@ const Header: React.FunctionComponent = () => {
                       size="md"
                       _focus={{ boxShadow: "outline" }}
                     >
-                      {`Continue as ${localStorage.getItem("userFirstName")}` ??
-                        `Get Started`}
+                      {`Continue as ${
+                        user?.displayName.split(" ")[0] ?? "Test User"
+                      }`}
                     </Button>
                     <Menu>
                       <MenuButton
                         as={Avatar}
                         aria-label="User Account"
                         size="sm"
+                        pl="2"
                         cursor="pointer"
-                        name={
-                          `${localStorage.getItem(
-                            "userFirstName"
-                          )} ${localStorage.getItem("userLastName")}` ?? "Test"
-                        }
-                        src="https://github.com/ayushsoni1010.png"
+                        name={user?.displayName ?? "Test"}
+                        src={user?.photoURL}
                       />
                       <MenuList>
                         <MenuItem

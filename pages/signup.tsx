@@ -97,9 +97,7 @@ const Signup = () => {
       lastName
     ) {
       try {
-        await signup(email, password);
-        localStorage.setItem("userFirstName", firstName);
-        localStorage.setItem("userLastName", lastName);
+        await signup(firstName, lastName, email, password);
         router.push("/login");
         helpers.alertToastHandling("You are successfully registered");
       } catch (err: any) {

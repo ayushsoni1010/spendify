@@ -151,8 +151,7 @@ const CollapseMenu: React.FunctionComponent<SidebarProps> = ({
                     }}
                     _focus={{ boxShadow: "outline" }}
                   >
-                    {`Continue as ${localStorage.getItem("userFirstName")}` ??
-                      `Get Started`}
+                    {`Continue as ${user.displayName ?? "Test User"}`}
                   </Button>
                   <Menu>
                     <MenuButton
@@ -160,12 +159,8 @@ const CollapseMenu: React.FunctionComponent<SidebarProps> = ({
                       aria-label="User Account"
                       size="sm"
                       cursor="pointer"
-                      name={
-                        `${localStorage.getItem(
-                          "userFirstName"
-                        )} ${localStorage.getItem("userLastName")}` ?? "Test"
-                      }
-                      src="https://github.com/ayushsoni1010.png"
+                      name={user?.displayName ?? "Test User"}
+                      src={user?.photoURL}
                     />
                     <MenuList>
                       <MenuItem

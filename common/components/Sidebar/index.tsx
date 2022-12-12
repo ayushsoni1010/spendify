@@ -120,17 +120,12 @@ const Sidebar = () => {
           <HStack gap="2">
             <Avatar
               size="sm"
-              name={
-                `${localStorage.getItem(
-                  "userFirstName"
-                )} ${localStorage.getItem("userLastName")}` ?? "Test"
-              }
-              src="https://github.com/ayushsoni1010.png"
+              bgColor="blue.200"
+              name={user?.displayName ?? "Test User"}
+              src={user?.photoURL}
             />
             <Text fontWeight="semibold">
-              {`${localStorage.getItem("userFirstName")} ${localStorage.getItem(
-                "userLastName"
-              )}` ?? "Test"}
+              {user?.displayName ?? "Test User"}
             </Text>
           </HStack>
           <Menu>
