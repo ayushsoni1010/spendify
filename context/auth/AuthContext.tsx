@@ -7,6 +7,8 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   signOut,
+  sendEmailVerification,
+  updateProfile,
 } from "firebase/auth";
 
 // Component Imports
@@ -27,6 +29,7 @@ const AuthContextProvider = ({ children }: { children: React.ReactNode }) => {
           email: user.email,
           displayName: user.displayName,
         });
+        console.log(user, 999999);
       } else {
         setUser(null);
       }
@@ -36,8 +39,27 @@ const AuthContextProvider = ({ children }: { children: React.ReactNode }) => {
     return () => unsubscribe();
   }, []);
 
-  const signup = async (email: string, password: string) => {
-    await createUserWithEmailAndPassword(auth, email, password);
+  const signup = async (
+    firstName: string,
+    lastName: string,
+    email: string,
+    password: string
+  ) => {
+    await createUserWithEmailAndPassword(auth, email, password)
+      .then(async (userCredential) => {
+        const user = userCredential.user;
+        await updateProfile(user, {
+          displayName: `${firstName} ${lastName}`,
+        }).catch((err) => {
+          throw new Error(err);
+        });
+        await sendEmailVerification(user).catch((err) => {
+          throw new Error(err);
+        });
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
   const login = async (email: string, password: string) => {

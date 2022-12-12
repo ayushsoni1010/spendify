@@ -38,6 +38,7 @@ const Sidebar = () => {
 
   const logoutUser = () => {
     logout();
+    router.reload();
     router.push("/login");
   };
 
@@ -120,10 +121,13 @@ const Sidebar = () => {
           <HStack gap="2">
             <Avatar
               size="sm"
-              name="Ayush Soni"
-              src="https://github.com/ayushsoni1010.png"
+              bgColor="blue.200"
+              name={user?.displayName ?? "Test User"}
+              src={user?.photoURL}
             />
-            <Text fontWeight="semibold">Ayush Soni</Text>
+            <Text fontWeight="semibold">
+              {user?.displayName ?? "Test User"}
+            </Text>
           </HStack>
           <Menu>
             <MenuButton
