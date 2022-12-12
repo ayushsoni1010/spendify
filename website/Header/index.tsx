@@ -40,6 +40,7 @@ const Header: React.FunctionComponent = () => {
 
   const logoutUser = () => {
     logout();
+    router.reload();
     router.push("/");
   };
 

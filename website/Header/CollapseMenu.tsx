@@ -41,6 +41,7 @@ const CollapseMenu: React.FunctionComponent<SidebarProps> = ({
 
   const logoutUser = () => {
     logout();
+    router.reload();
     router.push("/");
     setOpen();
   };

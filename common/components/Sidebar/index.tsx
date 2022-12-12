@@ -38,6 +38,7 @@ const Sidebar = () => {
 
   const logoutUser = () => {
     logout();
+    router.reload();
     router.push("/login");
   };
 
