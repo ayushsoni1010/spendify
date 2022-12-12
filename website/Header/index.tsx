@@ -1,6 +1,7 @@
 // Basic Imports
 import React, { useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 // Chakra UI Imports
 import {
@@ -11,6 +12,12 @@ import {
   Text,
   ButtonGroup,
   IconButton,
+  HStack,
+  Avatar,
+  Menu,
+  MenuButton,
+  MenuList,
+  MenuItem,
 } from "@chakra-ui/react";
 
 // Components Imports
@@ -18,12 +25,23 @@ import Logo from "@/common/components/Logo";
 import NavItems from "./NavItems";
 import CollapseMenu from "./CollapseMenu";
 import ColorModeSwitcher from "@/website/ColorModeSwitcher";
+import { useAuth } from "@/context/auth/AuthContext";
 
 // Icon Imports
 import { FiMenu } from "react-icons/fi";
+import { GrUserSettings } from "react-icons/gr";
+import { HiOutlineLogout } from "react-icons/hi";
 
 const Header: React.FunctionComponent = () => {
   const [isOpen, setOpen] = useState(false);
+
+  const { user, logout } = useAuth();
+  const router = useRouter();
+
+  const logoutUser = () => {
+    logout();
+    router.push("/");
+  };
 
   const handleToggle = () => {
     setOpen((prevState: boolean) => !prevState);
@@ -31,7 +49,13 @@ const Header: React.FunctionComponent = () => {
 
   return (
     <React.Fragment>
-      <Box position="fixed" top="0" zIndex="10" minW="100%" px="20">
+      <Box
+        position="fixed"
+        top="0"
+        zIndex="10"
+        minW="100%"
+        px={{ base: 20, lg: 20, md: 20, sm: 4, xs: 4 }}
+      >
         <Flex
           backdropFilter="blur(4px)"
           border="none"
@@ -89,31 +113,91 @@ const Header: React.FunctionComponent = () => {
                 _focus={{ boxShadow: "outline" }}
               />
             </Box>
-            <ButtonGroup display={{ base: "flex", md: "flex", sm: "none" }}>
-              <Button
-                as={Link}
-                href="/login"
-                passHref
-                border="2px"
-                variant="outline"
-                size="md"
-                colorScheme="blue"
-                _focus={{ boxShadow: "outline" }}
-              >
-                Log in
-              </Button>
-              <Button
-                colorScheme="blue"
-                as={Link}
-                href="/signup"
-                passHref
-                variant="solid"
-                size="md"
-                _focus={{ boxShadow: "outline" }}
-              >
-                Sign up
-              </Button>
-            </ButtonGroup>
+            <Box
+              display={{
+                base: "flex",
+                md: "flex",
+                sm: "none",
+                xs: "none",
+              }}
+            >
+              {!user ? (
+                <>
+                  <ButtonGroup>
+                    <Button
+                      as={Link}
+                      href="/login"
+                      passHref
+                      border="2px"
+                      variant="outline"
+                      size="md"
+                      colorScheme="blue"
+                      _focus={{ boxShadow: "outline" }}
+                    >
+                      Log in
+                    </Button>
+                    <Button
+                      colorScheme="blue"
+                      as={Link}
+                      href="/signup"
+                      passHref
+                      variant="solid"
+                      size="md"
+                      _focus={{ boxShadow: "outline" }}
+                    >
+                      Sign up
+                    </Button>
+                  </ButtonGroup>
+                </>
+              ) : (
+                <>
+                  <HStack gap="2">
+                    <Button
+                      colorScheme="blue"
+                      as={Link}
+                      href="/app/dashboard"
+                      passHref
+                      variant="solid"
+                      size="md"
+                      _focus={{ boxShadow: "outline" }}
+                    >
+                      {`Continue as ${localStorage.getItem("userFirstName")}` ??
+                        `Get Started`}
+                    </Button>
+                    <Menu>
+                      <MenuButton
+                        as={Avatar}
+                        aria-label="User Account"
+                        size="sm"
+                        cursor="pointer"
+                        name={
+                          `${localStorage.getItem(
+                            "userFirstName"
+                          )} ${localStorage.getItem("userLastName")}` ?? "Test"
+                        }
+                        src="https://github.com/ayushsoni1010.png"
+                      />
+                      <MenuList>
+                        <MenuItem
+                          style={{ margin: 0 }}
+                          onClick={() => router.push("/app/settings")}
+                          icon={<GrUserSettings />}
+                        >
+                          Settings
+                        </MenuItem>
+                        <MenuItem
+                          style={{ margin: 0 }}
+                          onClick={() => logoutUser()}
+                          icon={<HiOutlineLogout />}
+                        >
+                          Logout
+                        </MenuItem>
+                      </MenuList>
+                    </Menu>
+                  </HStack>
+                </>
+              )}
+            </Box>
           </Stack>
         </Flex>
         <CollapseMenu isOpen={isOpen} setOpen={handleToggle} />
