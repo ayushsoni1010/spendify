@@ -15,7 +15,7 @@ import "@/styles/globals.css";
 
 export default function App({ Component, pageProps }: AppProps) {
   const router = useRouter();
-  const noAuthRequired = ["/", "/login", "/signup"];
+  const noAuthRequired = ["/", "/login", "/signup", "/brand-assets"];
   return (
     <AuthContextProvider>
       <ChakraProvider theme={theme}>
