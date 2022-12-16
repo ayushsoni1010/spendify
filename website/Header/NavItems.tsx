@@ -7,8 +7,8 @@ const NavItems: React.FunctionComponent = () => {
   return (
     <React.Fragment>
       <HStack
-        display={{ base: "flex", md: "flex", sm: "none" }}
-        flexDir={"row"}
+        display={{ base: "flex", md: "flex", sm: "none", xs: "none" }}
+        flexDir="row"
       >
         <ButtonGroup isAttached alignSelf="center">
           {linkDetails.map(

@@ -32,17 +32,23 @@ const Hero: React.FunctionComponent = () => {
             h="35px"
           >
             <HStack gap="1">
-              <Text size="sm" fontWeight="semibold">
+              <Text
+                size="sm"
+                fontWeight="semibold"
+                fontSize={{
+                  base: "md",
+                  lg: "md",
+                  md: "md",
+                  sm: "xs",
+                  xs: "xs",
+                }}
+              >
                 Support us by becoming a stargazer🚀
               </Text>
               <Image
                 src="https://img.shields.io/github/stars/ayushsoni1010/spendify.svg?style=social&label=Star"
                 alt="Repository Star"
               />
-              {/* <Image
-                src="https://img.shields.io/github/stars/saas-js/saas-ui.svg?style=social&label=Star"
-                alt="Repository Star"
-              /> */}
             </HStack>
           </Button>
         </HStack>
@@ -52,17 +58,17 @@ const Hero: React.FunctionComponent = () => {
             "linear(to-r, cyan.400,white, cyan.400)"
           )}
           bgClip="text"
-          fontSize={{ base: "7xl", md: "7xl", sm: "3xl" }}
+          fontSize={{ base: "7xl", md: "7xl", sm: "3xl", xs: "4xl" }}
           fontWeight="700"
           textAlign="center"
         >
           Get your spending money under control and manage
         </Text>
         <Text
-          fontSize={{ base: "xl", md: "xl", sm: "md" }}
+          fontSize={{ base: "xl", md: "xl", sm: "md", xs: "md" }}
           colorScheme="white"
           textAlign="center"
-          px={{ base: 60, md: 60, sm: 10 }}
+          px={{ base: 60, md: 60, sm: 10, xs: 10 }}
           my="5"
         >
           Control your budgets, spending and personal finances

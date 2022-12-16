@@ -50,20 +50,31 @@ const CollapseMenu: React.FunctionComponent<SidebarProps> = ({
     <React.Fragment>
       <Collapse in={isOpen}>
         <Box
-          display={{ md: "none", sm: "flex" }}
+          display={{
+            base: "none",
+            lg: "none",
+            md: "none",
+            sm: "flex",
+            xs: "flex",
+          }}
           flexDir="column"
           m="5"
           p="5"
           borderRadius="md"
-          minH="50vh"
+          minH="lg"
           justifyContent="space-between"
-          alignItems="start"
           bg={useColorModeValue("black", "gray.700")}
         >
           <Stack
-            display={{ md: "none", sm: "flex" }}
+            display={{
+              base: "none",
+              lg: "none",
+              md: "none",
+              sm: "flex",
+              xs: "flex",
+            }}
             flexDir="column"
-            alignItems="start"
+            w="full"
           >
             {linkDetails.map(
               (
@@ -159,6 +170,7 @@ const CollapseMenu: React.FunctionComponent<SidebarProps> = ({
                       as={Avatar}
                       aria-label="User Account"
                       size="sm"
+                      p="2"
                       cursor="pointer"
                       name={user?.displayName ?? "Test User"}
                       src={user?.photoURL}
