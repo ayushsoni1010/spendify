@@ -2,15 +2,25 @@
 import React from "react";
 
 // Chakra UI Imports
-import { ColorModeProvider, useColorModeValue } from "@chakra-ui/react";
+import {
+  useBreakpointValue,
+  ColorModeProvider,
+  useColorModeValue,
+} from "@chakra-ui/react";
 
 const Logo: React.FunctionComponent = () => {
   return (
     <React.Fragment>
       <ColorModeProvider>
         <svg
-          width="40"
-          height="40"
+          width={useBreakpointValue(
+            { base: "40", lg: "40", md: "40", sm: "30", xs: "30" },
+            { ssr: false }
+          )}
+          height={useBreakpointValue(
+            { base: "40", lg: "40", md: "40", sm: "30", xs: "30" },
+            { ssr: false }
+          )}
           viewBox="0 0 100 83"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
