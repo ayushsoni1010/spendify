@@ -23,6 +23,7 @@ import {
 } from "@chakra-ui/react";
 
 // Components Imports
+import Header from "@/website/Header";
 import Logo from "@/common/components/Logo";
 import { useAuth } from "@/context/auth/AuthContext";
 import { sidebarDetails } from "./__sidebarDetails";
@@ -45,6 +46,13 @@ const Sidebar = () => {
   return (
     <React.Fragment>
       <Box
+        display={{
+          base: "block",
+          lg: "block",
+          md: "block",
+          sm: "none",
+          xs: "none",
+        }}
         py="6"
         w="fit-content"
         position="fixed"
@@ -153,6 +161,98 @@ const Sidebar = () => {
             </MenuList>
           </Menu>
         </HStack>
+      </Box>
+      <Box
+        display={{
+          base: "none",
+          lg: "none",
+          md: "none",
+          sm: "block",
+          xs: "block",
+        }}
+        position="fixed"
+        top="0"
+        left="0"
+        right="0"
+      >
+        <Header />
+      </Box>
+      <Box
+        display={{
+          base: "none",
+          lg: "none",
+          md: "none",
+          sm: "block",
+          xs: "block",
+        }}
+        position="fixed"
+        right="0"
+        left="0"
+        bottom="0"
+        w="100vw"
+        bgColor="gray.50"
+      >
+        <Divider />
+        <Flex
+          my="2"
+          px="4"
+          alignItems="center"
+          justify="space-between"
+          display="flex"
+        >
+          {sidebarDetails.map((item, index) => {
+            return (
+              <List
+                display="flex"
+                key={index}
+                _hover={{
+                  bg: router.pathname === item.url ? "blue.400" : "gray.200",
+                }}
+                p="1"
+                bgColor={router.pathname === item.url ? "blue.400" : ""}
+                px="2"
+                spacing={10}
+                borderRadius="4px"
+                color={router.pathname === item.url ? "white" : ""}
+              >
+                <Link href={item.url} passHref>
+                  <ListItem fontSize="md" fontWeight="500" py="0.5" pl="1">
+                    <ListIcon w="5" h="5" position="relative" top="-2px">
+                      {item.icon}
+                    </ListIcon>
+                  </ListItem>
+                </Link>
+              </List>
+            );
+          })}
+          <Menu>
+            <MenuButton
+              align="center"
+              as={Avatar}
+              aria-label="User Account"
+              size="sm"
+              cursor="pointer"
+              name={user?.displayName ?? "Test"}
+              src={user?.photoURL}
+            />
+            <MenuList>
+              <MenuItem
+                style={{ margin: 0 }}
+                onClick={() => router.push("/app/settings")}
+                icon={<GrUserSettings />}
+              >
+                Settings
+              </MenuItem>
+              <MenuItem
+                style={{ margin: 0 }}
+                onClick={() => logoutUser()}
+                icon={<HiOutlineLogout />}
+              >
+                Logout
+              </MenuItem>
+            </MenuList>
+          </Menu>
+        </Flex>
       </Box>
     </React.Fragment>
   );

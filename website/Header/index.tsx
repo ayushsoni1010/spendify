@@ -55,7 +55,7 @@ const Header: React.FunctionComponent = () => {
         top="0"
         zIndex="10"
         minW="100%"
-        px={{ base: 20, lg: 20, md: 20, sm: 4, xs: 4 }}
+        px={{ base: 20, lg: 20, md: 20, sm: 0, xs: 0 }}
       >
         <Flex
           backdropFilter="blur(4px)"
@@ -76,14 +76,20 @@ const Header: React.FunctionComponent = () => {
               <Flex
                 justify="start"
                 direction="row"
-                align="center"
+                alignItems="center"
                 cursor="pointer"
                 gap="2"
               >
                 <Logo />
                 <Text
                   fontFamily={"heading"}
-                  fontSize="2xl"
+                  fontSize={{
+                    base: "2xl",
+                    lg: "2xl",
+                    md: "2xl",
+                    sm: "xl",
+                    xs: "xl",
+                  }}
                   fontWeight="extrabold"
                 >
                   Spendify
