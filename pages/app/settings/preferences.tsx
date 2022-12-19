@@ -9,7 +9,7 @@ import { Box } from "@chakra-ui/react";
 // Components Imports
 import Sidebar from "@/common/components/Sidebar";
 
-const Dashboard: NextPage = () => {
+const Preferences: NextPage = () => {
   const router = useRouter();
 
   return (
@@ -20,4 +20,4 @@ const Dashboard: NextPage = () => {
   );
 };
 
-export default Dashboard;
+export default Preferences;

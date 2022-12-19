@@ -9,15 +9,15 @@ import { Box } from "@chakra-ui/react";
 // Components Imports
 import Sidebar from "@/common/components/Sidebar";
 
-const Settings: NextPage = () => {
+const Profile: NextPage = () => {
   const router = useRouter();
 
   return (
     <React.Fragment>
       <Sidebar />
-      <Box>{router.pathname}</Box>
+      <Box></Box>
     </React.Fragment>
   );
 };
 
-export default Settings;
+export default Profile;

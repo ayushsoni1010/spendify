@@ -177,7 +177,6 @@ const Header: React.FunctionComponent = () => {
                         as={Avatar}
                         aria-label="User Account"
                         size="sm"
-                        pl="2"
                         cursor="pointer"
                         name={user?.displayName ?? "Test"}
                         src={user?.photoURL}

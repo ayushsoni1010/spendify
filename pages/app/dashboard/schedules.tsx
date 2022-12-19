@@ -15,7 +15,7 @@ const Schedules: NextPage = () => {
   return (
     <React.Fragment>
       <Sidebar />
-      <Box>{router.pathname}</Box>
+      <Box></Box>
     </React.Fragment>
   );
 };
