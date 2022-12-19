@@ -14,11 +14,11 @@ const Logo: React.FunctionComponent = () => {
       <ColorModeProvider>
         <svg
           width={useBreakpointValue(
-            { base: "40", lg: "40", md: "40", sm: "30", xs: "30" },
+            { base: "40", xl: "40", lg: "40", md: "40", sm: "30", xs: "30" },
             { ssr: false }
           )}
           height={useBreakpointValue(
-            { base: "40", lg: "40", md: "40", sm: "30", xs: "30" },
+            { base: "40", xl: "40", lg: "40", md: "40", sm: "30", xs: "30" },
             { ssr: false }
           )}
           viewBox="0 0 100 83"
