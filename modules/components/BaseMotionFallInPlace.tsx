@@ -13,6 +13,8 @@ const BaseMotionFallInPlace = ({
   translateY = "20px",
   initialInView,
   threshold,
+  motion = false,
+  scaling = false,
   onChange,
   ...rest
 }: MotionBoxProps & {
@@ -20,6 +22,8 @@ const BaseMotionFallInPlace = ({
   initialInView?: boolean;
   threshold?: number;
   translateY?: string;
+  motion?: boolean;
+  scaling?: boolean;
   onChange?: IntersectionOptions["onChange"];
 }) => {
   const { ref, inView } = useInView({
@@ -32,13 +36,20 @@ const BaseMotionFallInPlace = ({
   return (
     <MotionBox
       ref={ref}
-      initial={{ scale: 1, opacity: 0, translateY }}
+      initial={{
+        scale: motion && scaling ? 1.1 : 1,
+        opacity: motion && scaling ? 1 : 0,
+        translateY,
+      }}
       animate={inView && { scale: 1, opacity: 1, translateY: 0 }}
       transition={{
         type: "tween",
         ease: "easeOut",
         duration: 2,
         delay: initialInView ? delay : 0,
+        repeat: motion ? Infinity : "",
+        repeatDelay: motion ? 0 : "",
+        repeatType: motion ? "reverse" : "",
       }}
       {...rest}
     >
