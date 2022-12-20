@@ -28,7 +28,10 @@ import { useAuth } from "@/context/auth/AuthContext";
 // Icons Imports
 import { VscAccount } from "react-icons/vsc";
 import { FaAngleRight } from "react-icons/fa";
+import { FaRupeeSign } from "react-icons/fa";
 import { MdSettingsSuggest } from "react-icons/md";
+import { CiBadgeDollar, CiDollar } from "react-icons/ci";
+import { GiExpense } from "react-icons/gi";
 
 const Settings: NextPage = () => {
   const router = useRouter();
@@ -104,9 +107,15 @@ const Settings: NextPage = () => {
           </Flex>
           <NextLink href="/app/settings/profile" passHref>
             <HStack
-              w="fit-content"
-              my="2"
-              spacing={"152px"}
+              w={{
+                base: 96,
+                lg: 96,
+                md: 96,
+                sm: "container.xs",
+                xs: "container.xs",
+              }}
+              justify="space-between"
+              mt="2"
               cursor="pointer"
               borderRadius="base"
               boxShadow="base"
@@ -133,8 +142,14 @@ const Settings: NextPage = () => {
           </NextLink>
           <NextLink href="/app/settings/preferences" passHref>
             <HStack
-              w="fit-content"
-              spacing="125px"
+              w={{
+                base: 96,
+                lg: 96,
+                md: 96,
+                sm: "container.xs",
+                xs: "container.xs",
+              }}
+              justify="space-between"
               cursor="pointer"
               borderRadius="base"
               boxShadow="base"
@@ -162,42 +177,117 @@ const Settings: NextPage = () => {
         </Stack>
         <Stack my="10">
           <Text fontWeight="600" fontSize={{ base: "2xl" }}>
-            Transaction
+            Category
           </Text>
-          <Box
-            p="4"
-            bgColor={useColorModeValue("gray.50", "gray.700")}
-            borderRadius="base"
-            boxShadow="base"
-          >
-            <Box w="full">
-              <Avatar
-                aria-label="User Account"
-                size="2xl"
-                cursor="pointer"
-                name={user?.displayName}
-                src={user?.photoURL}
+
+          <NextLink href="/app/settings/preferences" passHref>
+            <HStack
+              w={{
+                base: 96,
+                lg: 96,
+                md: 96,
+                sm: "container.xs",
+                xs: "container.xs",
+              }}
+              justify="space-between"
+              cursor="pointer"
+              borderRadius="base"
+              boxShadow="base"
+              bgColor={useColorModeValue("gray.50", "gray.700")}
+            >
+              <Button
+                leftIcon={<CiDollar />}
+                bgColor={useColorModeValue("gray.50", "gray.700")}
+                _hover={{ bgColor: useColorModeValue("gray.50", "gray.700") }}
+                _focus={{ bgColor: useColorModeValue("gray.50", "gray.700") }}
+                _active={{
+                  bgColor: useColorModeValue("gray.50", "gray.700"),
+                }}
+                size="lg"
+              >
+                Income
+              </Button>
+              <IconButton
+                size="lg"
+                icon={<FaAngleRight />}
+                aria-label={""}
+                variant="unstyled"
+                fontWeight="bold"
               />
-            </Box>
-            <Box mt="4">
-              <Text fontWeight="600" my="2">
-                Username
-              </Text>
-              <Input type="text" value={user?.displayName} />
-            </Box>
-            <Box mt="4">
-              <Text fontWeight="600" my="2">
-                Email
-              </Text>
-              <Input type="email" value={user?.email} />
-            </Box>
-            <Box mt="4">
-              <Text fontWeight="600" my="2">
-                Password
-              </Text>
-              <Input type="password" value={user?.displayName} />
-            </Box>
-          </Box>
+            </HStack>
+          </NextLink>
+          <NextLink href="/app/settings/preferences" passHref>
+            <HStack
+              w={{
+                base: 96,
+                lg: 96,
+                md: 96,
+                sm: "container.xs",
+                xs: "container.xs",
+              }}
+              justify="space-between"
+              cursor="pointer"
+              borderRadius="base"
+              boxShadow="base"
+              bgColor={useColorModeValue("gray.50", "gray.700")}
+            >
+              <Button
+                leftIcon={<GiExpense />}
+                bgColor={useColorModeValue("gray.50", "gray.700")}
+                _hover={{ bgColor: useColorModeValue("gray.50", "gray.700") }}
+                _focus={{ bgColor: useColorModeValue("gray.50", "gray.700") }}
+                _active={{
+                  bgColor: useColorModeValue("gray.50", "gray.700"),
+                }}
+                size="lg"
+              >
+                Expense
+              </Button>
+              <IconButton
+                size="lg"
+                icon={<FaAngleRight />}
+                aria-label={""}
+                variant="unstyled"
+                fontWeight="bold"
+              />
+            </HStack>
+          </NextLink>
+          <NextLink href="/app/settings/preferences" passHref>
+            <HStack
+              w={{
+                base: 96,
+                lg: 96,
+                md: 96,
+                sm: "container.xs",
+                xs: "container.xs",
+              }}
+              justify="space-between"
+              cursor="pointer"
+              borderRadius="base"
+              boxShadow="base"
+              bgColor={useColorModeValue("gray.50", "gray.700")}
+            >
+              <Button
+                leftIcon={<FaRupeeSign />}
+                bgColor={useColorModeValue("gray.50", "gray.700")}
+                _hover={{ bgColor: useColorModeValue("gray.50", "gray.700") }}
+                _focus={{ bgColor: useColorModeValue("gray.50", "gray.700") }}
+                _active={{
+                  bgColor: useColorModeValue("gray.50", "gray.700"),
+                }}
+                size="lg"
+              >
+                Budget
+              </Button>
+              <IconButton
+                size="lg"
+                icon={<FaAngleRight />}
+                aria-label={""}
+                variant="unstyled"
+                fontWeight="bold"
+              />
+            </HStack>
+          </NextLink>
         </Stack>
       </BaseBox>
     </React.Fragment>
