@@ -24,7 +24,8 @@
       "@/helpers/*": ["helpers/*"],
       "@/services/*": ["services/*"],
       "@/website/*": ["website/*"],
-      "@/styles/*": ["styles/*"]
+      "@/styles/*": ["styles/*"],
+      "@/public/*": ["public/*"]
     }
   },
   "include": [
