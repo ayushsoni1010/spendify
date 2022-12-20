@@ -4,8 +4,8 @@
 
 /***** Show custom scrollbar on screen *****/
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: 5px;
+  height: 5px;
   display: unset;
 }
 
@@ -16,7 +16,7 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--blue-500);
+  background: var(--chakra-colors-blue-400);
 }
 
 ::-webkit-scrollbar-track {
@@ -112,18 +112,18 @@
 
 @-webkit-keyframes brandAnimation {
   0% {
-    color: var(--red-500);
+    color: var(--blue-300);
   }
   100% {
-    color: var(--blue-500);
+    color: var(--blue-800);
   }
 }
 
 @keyframes brandAnimation {
   0% {
-    color: var(--red-500);
+    color: var(--blue-300);
   }
   100% {
-    color: var(--blue-500);
+    color: var(--blue-800);
   }
 }/*# sourceMappingURL=index.css.map */
