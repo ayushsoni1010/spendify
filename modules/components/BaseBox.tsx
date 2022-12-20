@@ -31,6 +31,11 @@ const BaseBox: React.FunctionComponent<BoxProps> = ({ children, ...props }) => {
             ? { base: 0, lg: 0, md: 0, sm: 10, xs: 10 }
             : {}
         }
+        mb={
+          router.pathname.startsWith("/app")
+            ? { base: 0, lg: 0, md: 0, sm: 40, xs: 40 }
+            : {}
+        }
         pb="0"
         {...props}
       >
