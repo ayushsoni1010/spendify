@@ -35,12 +35,7 @@ const Dashboard: NextPage = () => {
   return (
     <React.Fragment>
       <Sidebar />
-      <BaseBox
-        pt={{ base: 10, lg: 10, md: 10 }}
-        px={{ base: 4, md: 6, lg: 10, sm: 4, xs: 4, xl: 10 }}
-        ml={{ base: 60, xl: 60, lg: 60, md: 64, sm: 0, xs: 0 }}
-        my={{ base: 0, lg: 0, md: 0, sm: 10, xs: 10 }}
-      >
+      <BaseBox>
         <Box
           p={{ base: 14, xl: 14, lg: 10, md: 10, sm: 10, xs: 10 }}
           bgGradient="linear(to-r, blue.400, purple.500)"
