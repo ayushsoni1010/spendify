@@ -21,7 +21,7 @@ const sidebarDetails = [
     key: "home",
   },
   {
-    title: "Analytics",
+    title: "Reports",
     icon: (
       <svg
         stroke="currentColor"
@@ -33,8 +33,8 @@ const sidebarDetails = [
         <path d="M450 128a46 46 0 00-44.11 59l-71.37 71.36a45.88 45.88 0 00-29 0l-52.91-52.91a46 46 0 10-89.12 0L75 293.88A46.08 46.08 0 10106.11 325l87.37-87.36a45.85 45.85 0 0029 0l52.92 52.92a46 46 0 1089.12 0L437 218.12A46 46 0 10450 128z"></path>
       </svg>
     ),
-    url: "/app/dashboard/analytics",
-    key: "analytics",
+    url: "/app/dashboard/reports",
+    key: "reports",
   },
   {
     title: "Budgets",
@@ -71,6 +71,30 @@ const sidebarDetails = [
     ),
     url: "/app/dashboard/schedules",
     key: "schedules",
+  },
+  {
+    title: "Invoices",
+    icon: (
+      <svg
+        stroke="currentColor"
+        fill="none"
+        stroke-width="2"
+        viewBox="0 0 24 24"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <desc></desc>
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+        <path d="M14 3v4a1 1 0 0 0 1 1h4"></path>
+        <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z"></path>
+        <line x1="9" y1="7" x2="10" y2="7"></line>
+        <line x1="9" y1="13" x2="15" y2="13"></line>
+        <line x1="13" y1="17" x2="15" y2="17"></line>
+      </svg>
+    ),
+    url: "/app/dashboard/invoices",
+    key: "invoices",
   },
 ];
 

@@ -8,16 +8,17 @@ import { Box } from "@chakra-ui/react";
 
 // Components Imports
 import Sidebar from "@/common/components/Sidebar";
+import BaseBox from "@/modules/components/BaseBox";
 
-const Analtics: NextPage = () => {
+const Preferences: NextPage = () => {
   const router = useRouter();
 
   return (
     <React.Fragment>
       <Sidebar />
-      <Box>{router.pathname}</Box>
+      <BaseBox></BaseBox>
     </React.Fragment>
   );
 };
 
-export default Analtics;
+export default Preferences;
