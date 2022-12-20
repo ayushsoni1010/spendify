@@ -49,7 +49,7 @@ const Dashboard: NextPage = () => {
               lg: "row",
               md: "column",
               sm: "column",
-              xs: "cloumn",
+              xs: "column",
             }}
             gap={{ base: 36, xl: 36, lg: 14, md: 10, sm: 10, xs: 10 }}
             alignItems="flex-start"
