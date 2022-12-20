@@ -21,8 +21,8 @@ export default function App({ Component, pageProps }: AppProps) {
     "/signup",
     "/brand-assets",
     "/features",
-    "opensource",
-    "sponsor",
+    "/opensource",
+    "/sponsor",
     "/about",
   ];
 
