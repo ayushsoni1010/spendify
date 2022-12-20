@@ -11,7 +11,7 @@ import ProtectedRoutes from "@/routers/ProtectedRouter";
 import { theme } from "@/common/utils/theme";
 
 // Styles Import
-import "@/styles/globals.css";
+import "@/styles/index.css";
 
 export default function App({ Component, pageProps }: AppProps) {
   const router = useRouter();

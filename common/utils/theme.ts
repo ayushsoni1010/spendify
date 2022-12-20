@@ -12,6 +12,12 @@ const breakpoints = {
   "2xl": "1536px",
 };
 
+const fonts = {
+  body: "Inter, sans-serif",
+  heading: "Inter, serif",
+  mono: "Inter, monospace",
+};
+
 const config = {
   initialColorMode: "light",
   useSystemColorMode: false,
@@ -20,6 +26,7 @@ const config = {
 const theme = extendTheme({
   config,
   breakpoints,
+  fonts,
 });
 
 export { theme };
