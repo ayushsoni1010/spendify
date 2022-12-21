@@ -1,4 +1,4 @@
-export const linkDetails: any[] = [
+export const linkDetails: Array<{ name: string; link: string }> = [
   {
     name: "Features",
     link: "/features",
