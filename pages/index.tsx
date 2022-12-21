@@ -6,7 +6,7 @@ import { NextPage } from "next";
 import Header from "@/website/Header";
 import Hero from "@/website/Hero";
 
-const Home: NextPage = () => {
+const Home: NextPage = (props: any) => {
   return (
     <div>
       <Head>
@@ -17,12 +17,32 @@ const Home: NextPage = () => {
 
       <main>
         <Header />
-        <Hero />
+        <Hero {...props} />
       </main>
 
       <footer></footer>
     </div>
   );
 };
+
+export async function getStaticProps() {
+  return {
+    props: {
+      announcement: {
+        description: "Support us by becoming a stargazer! 🚀",
+        stargazerTitle: "Repository Star",
+        stargazerLink:
+          "https://img.shields.io/github/stars/ayushsoni1010/spendify.svg?style=social&label=Star",
+        href: "https://github.com/ayushsoni1010/spendify",
+      },
+      heroSection: {
+        heading: "Get your spending money under control and manage",
+        description:
+          "Spendify is the most intuitive, affordable, and smart way to automate your freelancer business and focus on what really matters.",
+        buttonText: "Get started",
+      },
+    },
+  };
+}
 
 export default Home;
