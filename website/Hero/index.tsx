@@ -5,74 +5,101 @@ import React from "react";
 import {
   Box,
   Button,
+  Grid,
+  GridItem,
   HStack,
   Image,
+  LinkBox,
   Text,
   useColorModeValue,
 } from "@chakra-ui/react";
 
 // Components Imports
 import BaseBox from "@/modules/components/BaseBox";
+import BaseBackgroundGradientRadial from "@/modules/components/BaseGradientRadix";
+import BaseMotionFallInPlace from "@/modules/components/BaseMotionFallInPlace";
+import StargazerBanner from "@/website/StargazerBanner/StargazerBanner";
+import MainHeroImage from "./MainHeroImage";
 
-const Hero: React.FunctionComponent = () => {
+const Hero: React.FunctionComponent = (props: any) => {
   return (
     <React.Fragment>
       <BaseBox position="relative">
-        <HStack m="auto" my="12">
-          <Button
-            m="auto"
-            as="a"
-            href="https://github.com/ayushsoni1010/spendify"
-            target="_blank"
-            textDecoration="none"
-            style={{ textDecoration: "none" }}
-            borderRadius="full"
-            border={"2px"}
-            borderColor="blue.600"
-            h="35px"
+        <BaseBackgroundGradientRadial
+          top="-1000px"
+          height="500px"
+          opacity="0.3"
+          _dark={{ opacity: "0.7" }}
+        />
+        <StargazerBanner {...props} />
+        <BaseMotionFallInPlace initialInView translateY="30px">
+          <Grid
+            display={{
+              base: "grid",
+              xl: "grid",
+              lg: "grid",
+              md: "block",
+              sm: "block",
+              xs: "block",
+            }}
+            templateColumns="1.5fr 1fr"
+            rowGap="10"
+            columnGap="10"
           >
-            <HStack gap="1">
+            <Box>
               <Text
-                size="sm"
-                fontWeight="semibold"
+                bgColor={useColorModeValue("black", "white")}
+                bgClip="text"
                 fontSize={{
-                  base: "md",
-                  lg: "md",
-                  md: "md",
-                  sm: "xs",
-                  xs: "xs",
+                  base: "6xl",
+                  lg: "6xl",
+                  md: "5xl",
+                  sm: "4xl",
+                  xs: "4xl",
+                }}
+                fontWeight="900"
+                lineHeight={{
+                  base: "72px",
+                  lg: "72px",
+                  md: "60px",
+                  sm: "40px",
+                  xs: "40px",
                 }}
               >
-                Support us by becoming a stargazer🚀
+                {props?.heroSection?.heading}
               </Text>
-              <Image
-                src="https://img.shields.io/github/stars/ayushsoni1010/spendify.svg?style=social&label=Star"
-                alt="Repository Star"
-              />
-            </HStack>
-          </Button>
-        </HStack>
-        <Text
-          bgGradient={useColorModeValue(
-            "linear(to-r, blue.400, purple.800, blue.300)",
-            "linear(to-r, cyan.400,white, cyan.400)"
-          )}
-          bgClip="text"
-          fontSize={{ base: "7xl", md: "7xl", sm: "3xl", xs: "4xl" }}
-          fontWeight="700"
-          textAlign="center"
-        >
-          Get your spending money under control and manage
-        </Text>
-        <Text
-          fontSize={{ base: "xl", md: "xl", sm: "md", xs: "md" }}
-          colorScheme="white"
-          textAlign="center"
-          px={{ base: 60, md: 60, sm: 10, xs: 10 }}
-          my="5"
-        >
-          Control your budgets, spending and personal finances
-        </Text>
+              <Text
+                fontSize={{
+                  base: "lg",
+                  lg: "lg",
+                  md: "lg",
+                  sm: "md",
+                  xs: "md",
+                }}
+                colorScheme="white"
+                // px={{ base: 80, lg: 80, md: 80, sm: 10, xs: 10 }}
+                my="5"
+              >
+                {props?.heroSection?.description}
+              </Text>
+              <Button
+                my="2"
+                mx="auto"
+                size="lg"
+                variant="solid"
+                boxShadow="base"
+                _active={{ boxShadow: "outline" }}
+                _hover={{ boxShadow: "xl" }}
+                colorScheme="blue"
+              >
+                Get started
+              </Button>
+            </Box>
+            <GridItem>
+              <MainHeroImage />
+            </GridItem>
+          </Grid>
+        </BaseMotionFallInPlace>
       </BaseBox>
     </React.Fragment>
   );
