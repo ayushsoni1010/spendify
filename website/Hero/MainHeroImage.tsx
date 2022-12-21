@@ -2,7 +2,7 @@
 import React from "react";
 
 // Chakra UI Imports
-import { Box, useBreakpointValue, Image, HStack, Flex } from "@chakra-ui/react";
+import { Box, Image, HStack, Flex } from "@chakra-ui/react";
 
 // Components Imports
 import BaseMotionFallInPlace from "@/modules/components/BaseMotionFallInPlace";
@@ -24,7 +24,7 @@ const MainHeroImage: React.FunctionComponent = () => {
         <Box position="absolute">
           <BaseMotionFallInPlace initialInView motion>
             <Image
-              src="/assets/payment.png"
+              src="/assets/hero-payment.png"
               alt="Hero"
               position="relative"
               right={{ base: 72, lg: 72, md: 28, sm: 28, xs: 24 }}
@@ -34,7 +34,7 @@ const MainHeroImage: React.FunctionComponent = () => {
         </Box>
         <Box position="absolute">
           <Image
-            src="/assets/payment.png"
+            src="/assets/hero-payment.png"
             alt="Hero"
             position="relative"
             right={{ base: 72, lg: 72, md: 28, sm: 28, xs: 24 }}
@@ -43,7 +43,7 @@ const MainHeroImage: React.FunctionComponent = () => {
         </Box>
 
         {/* <Image
-          src="/assets/business.svg"
+          src="/assets/hero-business.svg"
           alt="Hero"
           position="absolute"
           left={{ base: 36 }}
@@ -52,7 +52,7 @@ const MainHeroImage: React.FunctionComponent = () => {
 
         <Box position="absolute">
           <Image
-            src="/assets/plate.png"
+            src="/assets/hero-plate.png"
             alt="Hero"
             position="relative"
             top={{ base: 14, lg: 14, md: 10, sm: 10, xs: 10 }}
@@ -64,7 +64,7 @@ const MainHeroImage: React.FunctionComponent = () => {
         <Box position="absolute">
           <BaseMotionFallInPlace motion scaling>
             <Image
-              src="/assets/brick.png"
+              src="/assets/hero-brick.png"
               alt="Hero"
               position="relative"
               top={{ base: 0, lg: 0, md: 0, sm: 0, xs: 2 }}
@@ -78,7 +78,7 @@ const MainHeroImage: React.FunctionComponent = () => {
         <Box position="absolute">
           <BaseMotionFallInPlace initialInView motion>
             <Image
-              src="/assets/meter.png"
+              src="/assets/hero-meter.png"
               alt="Hero"
               position="relative"
               top={{ base: 60, lg: 60, md: 52, sm: 36, xs: 36 }}
@@ -90,7 +90,7 @@ const MainHeroImage: React.FunctionComponent = () => {
 
         <Box position="absolute">
           <Image
-            src="/assets/meter.png"
+            src="/assets/hero-meter.png"
             alt="Hero"
             position="relative"
             top={{ base: 60, lg: 60, md: 52, sm: 36, xs: 36 }}
@@ -102,7 +102,7 @@ const MainHeroImage: React.FunctionComponent = () => {
         <Box position="absolute">
           <BaseMotionFallInPlace initialInView motion>
             <Image
-              src="/assets/star.png"
+              src="/assets/hero-star.png"
               alt="Hero"
               position="relative"
               top={{ base: 56, lg: 56, md: 52, sm: 40, xs: 40 }}
@@ -113,7 +113,7 @@ const MainHeroImage: React.FunctionComponent = () => {
         </Box>
         <Box position="absolute">
           <Image
-            src="/assets/star.png"
+            src="/assets/hero-star.png"
             alt="Hero"
             position="relative"
             top={{ base: 56, lg: 56, md: 52, sm: 40, xs: 40 }}

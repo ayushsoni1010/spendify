@@ -7,10 +7,8 @@ import {
   Button,
   Grid,
   GridItem,
-  HStack,
-  Image,
-  LinkBox,
   Text,
+  VStack,
   useColorModeValue,
 } from "@chakra-ui/react";
 
@@ -42,7 +40,8 @@ const Hero: React.FunctionComponent = (props: any) => {
               sm: "block",
               xs: "block",
             }}
-            templateColumns="1.5fr 1fr"
+            gap="0"
+            templateColumns="1.2fr 0.8fr"
             rowGap="10"
             columnGap="10"
           >
@@ -65,35 +64,59 @@ const Hero: React.FunctionComponent = (props: any) => {
                   sm: "40px",
                   xs: "40px",
                 }}
+                pr={{ lg: 4, md: 0, sm: 0, xs: 0 }}
+                textAlign={{
+                  base: "left",
+                  lg: "left",
+                  md: "center",
+                  sm: "center",
+                  xs: "center",
+                }}
               >
                 {props?.heroSection?.heading}
               </Text>
-              <Text
-                fontSize={{
-                  base: "lg",
-                  lg: "lg",
-                  md: "lg",
-                  sm: "md",
-                  xs: "md",
+              <VStack
+                alignItems={{
+                  base: "start",
+                  lg: "start",
+                  md: "center",
+                  sm: "center",
+                  xs: "center",
                 }}
-                colorScheme="white"
-                // px={{ base: 80, lg: 80, md: 80, sm: 10, xs: 10 }}
-                my="5"
               >
-                {props?.heroSection?.description}
-              </Text>
-              <Button
-                my="2"
-                mx="auto"
-                size="lg"
-                variant="solid"
-                boxShadow="base"
-                _active={{ boxShadow: "outline" }}
-                _hover={{ boxShadow: "xl" }}
-                colorScheme="blue"
-              >
-                Get started
-              </Button>
+                <Text
+                  fontSize={{
+                    base: "lg",
+                    lg: "lg",
+                    md: "lg",
+                    sm: "md",
+                    xs: "md",
+                  }}
+                  textAlign={{
+                    base: "left",
+                    lg: "left",
+                    md: "center",
+                    sm: "center",
+                    xs: "center",
+                  }}
+                  colorScheme="white"
+                  my="5"
+                >
+                  {props?.heroSection?.description}
+                </Text>
+                <Button
+                  my="2"
+                  size={{ base: "lg", lg: "lg", md: "lg" }}
+                  variant="solid"
+                  boxShadow="base"
+                  cursor="pointer"
+                  _active={{ boxShadow: "outline" }}
+                  _hover={{ boxShadow: "xl" }}
+                  colorScheme="blue"
+                >
+                  {props?.heroSection?.buttonText}
+                </Button>
+              </VStack>
             </Box>
             <GridItem>
               <MainHeroImage />
