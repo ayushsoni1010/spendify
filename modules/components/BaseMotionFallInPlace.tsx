@@ -37,7 +37,7 @@ const BaseMotionFallInPlace = ({
     <MotionBox
       ref={ref}
       initial={{
-        scale: motion && scaling ? 1.1 : 1,
+        scale: 1,
         opacity: motion && scaling ? 1 : 0,
         translateY,
       }}
