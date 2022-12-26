@@ -3,6 +3,7 @@
 // import { RiMoneyDollarCircleLine } from 'react-icons/ri';
 // import { MdOutlineSchedule } from 'react-icons/md';
 
+// TODO: Fix the types of sidebar details
 const sidebarDetails = [
   {
     title: "Home",
