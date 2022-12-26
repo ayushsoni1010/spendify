@@ -20,6 +20,7 @@ const MainHeroImage: React.FunctionComponent = () => {
           xs: "center",
         }}
         my={{ base: 0, lg: 0, md: 20, sm: 20, xs: 20 }}
+        mb={{ base: 0, lg: 0, md: 96, sm: 96, xs: 96 }}
       >
         <Box position="absolute">
           <BaseMotionFallInPlace initialInView motion>

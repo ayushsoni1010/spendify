@@ -17,6 +17,8 @@ export default function App({ Component, pageProps }: AppProps) {
   const router = useRouter();
   const noAuthRequired = [
     "/",
+    "/500",
+    "/404",
     "/login",
     "/signup",
     "/brand-assets",
@@ -24,6 +26,7 @@ export default function App({ Component, pageProps }: AppProps) {
     "/opensource",
     "/sponsor",
     "/about",
+    "/help",
   ];
 
   return (

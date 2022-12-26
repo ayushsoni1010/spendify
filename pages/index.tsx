@@ -5,6 +5,7 @@ import { NextPage } from "next";
 // Components Imports
 import Header from "@/website/Header";
 import Hero from "@/website/Hero";
+import Footer from "@/website/Footer/Footer";
 
 const Home: NextPage = (props: any) => {
   return (
@@ -20,7 +21,9 @@ const Home: NextPage = (props: any) => {
         <Hero {...props} />
       </main>
 
-      <footer></footer>
+      <footer>
+        <Footer />
+      </footer>
     </div>
   );
 };
