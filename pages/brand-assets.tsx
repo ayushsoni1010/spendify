@@ -15,12 +15,14 @@ import {
 
 // Components Imports
 import BaseBox from "@/modules/components/BaseBox";
+import BaseSeo from "@/modules/components/BaseSeo";
 import BaseMotionFloat from "@/modules/components/BaseMotionFloat";
 import Header from "@/website/Header";
 
 const BrandAssets: NextPage = () => {
   return (
     <React.Fragment>
+      <BaseSeo title="Brand Assets" />
       <Header />
       <Box
         position="relative"

@@ -17,6 +17,7 @@ import {
 
 // Components Imports
 import BaseBox from "@/modules/components/BaseBox";
+import BaseSeo from "@/modules/components/BaseSeo";
 
 // Icon Imports
 import { MdConstruction } from "react-icons/md";
@@ -24,6 +25,7 @@ import { MdConstruction } from "react-icons/md";
 const About: NextPage = () => {
   return (
     <React.Fragment>
+      <BaseSeo title="About" />
       <BaseBox>
         <Container m="auto" mt="20">
           <Flex gap="4" my="4">

@@ -15,10 +15,12 @@ import {
 
 // Components Imports
 import BaseBox from "@/modules/components/BaseBox";
+import BaseSeo from "@/modules/components/BaseSeo";
 
 const NotFound: NextPage = () => {
   return (
     <React.Fragment>
+      <BaseSeo title="Not Found" />
       <BaseBox>
         <Container m="auto" mt="20">
           <Heading as="h1">Not Found</Heading>
