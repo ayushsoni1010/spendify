@@ -30,7 +30,9 @@ const BaseSeo: React.FunctionComponent<SeoType> = (props: SeoType) => {
           property="og:image"
           content="https://ayushsoni1010.com/profile.jpg"
         />
-        <title>{["Spendify", props.title].flat().join(" ― ")}</title>
+        <title>
+          {["Spendify", props.title].flat().filter(Boolean).join(" - ")}
+        </title>
       </Head>
     </React.Fragment>
   );
