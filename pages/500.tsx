@@ -15,10 +15,12 @@ import {
 
 // Components Imports
 import BaseBox from "@/modules/components/BaseBox";
+import BaseSeo from "@/modules/components/BaseSeo";
 
 const Custom500: NextPage = () => {
   return (
     <React.Fragment>
+      <BaseSeo title="Internal Server Error" />
       <BaseBox>
         <Container m="auto" mt="20">
           <Heading as="h1">Internal server error</Heading>

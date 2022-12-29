@@ -19,6 +19,7 @@ import {
 } from "@chakra-ui/react";
 
 // Components Imports
+import BaseSeo from "@/modules/components/BaseSeo";
 import { useAuth } from "@/context/auth/AuthContext";
 import { helpers } from "@/helpers/helpers";
 
@@ -117,6 +118,7 @@ const Signup = () => {
 
   return (
     <React.Fragment>
+      <BaseSeo title="Sign Up" />
       <Container w={"auto"} mt={24}>
         <Heading textAlign="center" fontSize="5xl" my="4">
           Sign Up

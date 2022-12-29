@@ -21,6 +21,7 @@ import {
 } from "@chakra-ui/react";
 
 // Components Imports
+import BaseSeo from "@/modules/components/BaseSeo";
 import { useAuth } from "@/context/auth/AuthContext";
 import { helpers } from "@/helpers/helpers";
 
@@ -124,6 +125,7 @@ const Login: NextPage = () => {
 
   return (
     <React.Fragment>
+      <BaseSeo title="Login" />
       <Container w={"auto"} mt={24}>
         <Heading textAlign="center" fontSize="5xl" my="4">
           Login

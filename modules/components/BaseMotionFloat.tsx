@@ -1,8 +1,16 @@
 // Basic Imports
 import React from "react";
 
+// Library Imports
+import { motion } from "framer-motion";
+
+// Chakra UI Imports
+import { chakra } from "@chakra-ui/react";
+
 // Types Imports
-import MotionBox, { MotionBoxProps } from "@/common/types/auth/motion/float";
+import { MotionBoxProps } from "@/common/types/components/base-motion-float";
+
+export const MotionBox = motion(chakra.div);
 
 const BaseMotionFloat: React.FunctionComponent<MotionBoxProps> = ({
   children,

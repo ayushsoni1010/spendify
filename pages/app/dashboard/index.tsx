@@ -22,6 +22,7 @@ import {
 import Sidebar from "@/common/components/Sidebar";
 import BaseBox from "@/modules/components/BaseBox";
 import BaseMotionFloat from "@/modules/components/BaseMotionFloat";
+import BaseSeo from "@/modules/components/BaseSeo";
 
 // Icons Imports
 import { TbFileDollar } from "react-icons/tb";
@@ -34,6 +35,7 @@ const Dashboard: NextPage = () => {
 
   return (
     <React.Fragment>
+      <BaseSeo title={["Dashboard", "Home"]} />
       <Sidebar />
       <BaseBox>
         <Box

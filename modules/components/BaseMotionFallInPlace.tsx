@@ -1,11 +1,17 @@
 // Basic Imports
 import React from "react";
 
+// Chakra UI Imports
+import { chakra } from "@chakra-ui/react";
+
 // Library Imports
 import { useInView, IntersectionOptions } from "react-intersection-observer";
+import { motion } from "framer-motion";
 
 // Types Imports
-import MotionBox, { MotionBoxProps } from "@/common/types/auth/motion/float";
+import { MotionBoxProps } from "@/common/types/components/base-motion-float";
+
+export const MotionBox = motion(chakra.div);
 
 const BaseMotionFallInPlace = ({
   children,
@@ -13,7 +19,7 @@ const BaseMotionFallInPlace = ({
   translateY = "20px",
   initialInView,
   threshold,
-  motion = false,
+  isMotion = false,
   scaling = false,
   onChange,
   ...rest
@@ -22,7 +28,7 @@ const BaseMotionFallInPlace = ({
   initialInView?: boolean;
   threshold?: number;
   translateY?: string;
-  motion?: boolean;
+  isMotion?: boolean;
   scaling?: boolean;
   onChange?: IntersectionOptions["onChange"];
 }) => {
@@ -38,7 +44,7 @@ const BaseMotionFallInPlace = ({
       ref={ref}
       initial={{
         scale: 1,
-        opacity: motion && scaling ? 1 : 0,
+        opacity: isMotion && scaling ? 1 : 0,
         translateY,
       }}
       animate={inView && { scale: 1, opacity: 1, translateY: 0 }}
@@ -47,9 +53,9 @@ const BaseMotionFallInPlace = ({
         ease: "easeOut",
         duration: 2,
         delay: initialInView ? delay : 0,
-        repeat: motion ? Infinity : "",
-        repeatDelay: motion ? 0 : "",
-        repeatType: motion ? "reverse" : "",
+        repeat: isMotion ? Infinity : "",
+        repeatDelay: isMotion ? 0 : "",
+        repeatType: isMotion ? "reverse" : "",
       }}
       {...rest}
     >

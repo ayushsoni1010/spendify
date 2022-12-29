@@ -22,6 +22,7 @@ import {
 
 // Components Imports
 import Sidebar from "@/common/components/Sidebar";
+import BaseSeo from "@/modules/components/BaseSeo";
 import BaseBox from "@/modules/components/BaseBox";
 import { useAuth } from "@/context/auth/AuthContext";
 
@@ -39,6 +40,7 @@ const Settings: NextPage = () => {
 
   return (
     <React.Fragment>
+      <BaseSeo title="Settings" />
       <Sidebar />
       <BaseBox>
         <Stack>

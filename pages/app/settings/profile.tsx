@@ -14,6 +14,7 @@ import {
 } from "@chakra-ui/react";
 
 // Components Imports
+import BaseSeo from "@/modules/components/BaseSeo";
 import Sidebar from "@/common/components/Sidebar";
 import BaseBox from "@/modules/components/BaseBox";
 import { useAuth } from "@/context/auth/AuthContext";
@@ -24,6 +25,7 @@ const Profile: NextPage = () => {
 
   return (
     <React.Fragment>
+      <BaseSeo title={["Settings", "Profile"]} />
       <Sidebar />
       <BaseBox>
         <Stack>

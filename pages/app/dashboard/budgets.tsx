@@ -7,6 +7,7 @@ import { NextPage } from "next";
 import { Box } from "@chakra-ui/react";
 
 // Components Imports
+import BaseSeo from "@/modules/components/BaseSeo";
 import Sidebar from "@/common/components/Sidebar";
 
 const Budgets: NextPage = () => {
@@ -14,6 +15,7 @@ const Budgets: NextPage = () => {
 
   return (
     <React.Fragment>
+      <BaseSeo title={["Dashboard", "Budgets"]} />
       <Sidebar />
       <Box></Box>
     </React.Fragment>
