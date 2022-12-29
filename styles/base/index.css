@@ -1,7 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
   scroll-behavior: smooth;
 }
 
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+  body {
+    color: white;
+    background: black;
+  }
+}
 /***** Show custom scrollbar on screen *****/
 ::-webkit-scrollbar {
   width: 5px;
@@ -107,7 +137,7 @@
 /***** Navbar Brand Logo *****/
 .navbar-brand {
   -webkit-animation: brandAnimation 2s linear infinite alternate both;
-          animation: brandAnimation 2s linear infinite alternate both;
+  animation: brandAnimation 2s linear infinite alternate both;
 }
 
 @-webkit-keyframes brandAnimation {
@@ -126,4 +156,4 @@
   100% {
     color: var(--blue-800);
   }
-}/*# sourceMappingURL=index.css.map */
+} /*# sourceMappingURL=index.css.map */
