@@ -10,6 +10,8 @@ import { chakra } from "@chakra-ui/react";
 // Types Imports
 import { MotionBoxProps } from "@/common/types/components/base-motion-float";
 
+export const MotionBox = motion(chakra.div);
+
 const BaseMotionFloat: React.FunctionComponent<MotionBoxProps> = ({
   children,
   delay = 0.2,
@@ -38,5 +40,3 @@ const BaseMotionFloat: React.FunctionComponent<MotionBoxProps> = ({
 };
 
 export default BaseMotionFloat;
-
-export const MotionBox = motion(chakra.div);

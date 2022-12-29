@@ -1,5 +1,4 @@
 // Basic Imports
-import Head from "next/head";
 import { NextPage } from "next";
 
 // Components Imports
