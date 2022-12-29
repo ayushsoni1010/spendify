@@ -17,12 +17,14 @@ import {
 // Components Imports
 import Sidebar from "@/common/components/Sidebar";
 import BaseBox from "@/modules/components/BaseBox";
+import BaseSeo from "@/modules/components/BaseSeo";
 
 const Dashboard: NextPage = () => {
   const router = useRouter();
 
   return (
     <React.Fragment>
+      <BaseSeo title={["Dashboard", "Invoices"]} />
       <Sidebar />
       <BaseBox>
         <Box
