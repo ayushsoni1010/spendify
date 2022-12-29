@@ -3,7 +3,7 @@ import React from "react";
 import Head from "next/head";
 
 // Types Imports
-import { SeoType } from "@/common/types/components/BaseSeo/seo";
+import { SeoType } from "@/common/types/components/base-seo";
 
 const BaseSeo: React.FunctionComponent<SeoType> = (props: SeoType) => {
   return (

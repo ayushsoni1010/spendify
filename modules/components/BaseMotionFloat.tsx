@@ -2,7 +2,9 @@
 import React from "react";
 
 // Types Imports
-import MotionBox, { MotionBoxProps } from "@/common/types/auth/motion/float";
+import MotionBox, {
+  MotionBoxProps,
+} from "@/common/types/components/base-motion-float/index";
 
 const BaseMotionFloat: React.FunctionComponent<MotionBoxProps> = ({
   children,

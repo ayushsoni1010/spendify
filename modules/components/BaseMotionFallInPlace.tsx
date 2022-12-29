@@ -1,11 +1,15 @@
 // Basic Imports
 import React from "react";
 
+// Chakra UI Imports
+import { chakra } from "@chakra-ui/react";
+
 // Library Imports
 import { useInView, IntersectionOptions } from "react-intersection-observer";
+import { motion } from "framer-motion";
 
 // Types Imports
-import MotionBox, { MotionBoxProps } from "@/common/types/auth/motion/float";
+import { MotionBoxProps } from "@/common/types/components/base-motion-float";
 
 const BaseMotionFallInPlace = ({
   children,
@@ -59,3 +63,5 @@ const BaseMotionFallInPlace = ({
 };
 
 export default BaseMotionFallInPlace;
+
+export const MotionBox = motion(chakra.div);
