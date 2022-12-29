@@ -5,7 +5,7 @@ import Head from "next/head";
 // Types Imports
 import { SeoType } from "@/common/types/components/base-seo";
 
-const BaseSeo: React.FunctionComponent<SeoType> = (props: SeoType) => {
+const BaseSeo: React.FunctionComponent<SeoType> = (props) => {
   return (
     <React.Fragment>
       <Head>
