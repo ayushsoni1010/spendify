@@ -12,6 +12,20 @@
   <i>Take control of your spending, convert currencies on the fly, generate invoices, and smoothly integrate payments - all in one place.</i>
 </p>
 
+
+## Table of Contents
+- [Overview](#-overview)
+- [Getting Started](#-getting-started)
+- [Features](#-features)
+- [Learn More](#-learn-more)
+- [Deploy on Vercel](#-deploy-on-vercel)
+- [Contributing](#-contributing)
+- [License](#-license)
+- [Issues](#-issues)
+- [Tech Stack Used](#-tech-stack-used)
+- [Acknowledgments](#-acknowledgments)
+
+
 ## 🌟 Overview
 
 Spendify is a powerful expense management tool designed to empower you in managing your finances efficiently. Whether you're tracking personal expenses, managing business finances, or need a simple tool for budgeting, Spendify has you covered.
@@ -73,8 +87,29 @@ If you're looking to deploy your own Next.js app, Vercel is the way to go. It's 
 
 Vercel provides you with an efficient way to showcase your project to the world. To learn more about deploying your Next.js app on Vercel, check out the [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying).
 
-Spendify is here to help you take control of your finances and make expense management a breeze. Explore its features, contribute to its development, and enjoy the power of efficient financial tracking. Happy budgeting with Spendify! 💸🚀
+## 🤝 Contributing 
+Contributions to Spendify are welcome! Whether you're a developer, designer, or enthusiast, you can help make Spendify even better. Feel free to open issues, submit pull requests, or provide feedback to enhance the project. Check out the [Contribution Guidelines](CONTRIBUTING.md) for more details.
+
+## 📜 License 
+This project is licensed under the [MIT License](LICENSE). Feel free to use and modify the code to suit your needs.
+
+## 🐛 Issues 
+If you encounter any issues or have suggestions, please report them in the [issue tracker](https://github.com/ayushsoni1010/spendify/issues).
+
+## 💅 Tech Stack Used 
+- Next.js
+- Firebase
+- TypeScript
+- TailwindCSS
+- Chakra-UI
+- Vercel
+
+## 🙏 Acknowledgments 
+Special thanks to the open-source community for their valuable contributions and tools that made this project possible.
+Inspired by the need for efficient expense management.
 
 --- 
+
+Take control of your finances and make expense management a breeze with Spendify! 💸🚀
 
 If you have any questions, feedback, or suggestions, please don't hesitate to reach out to us. We welcome your contributions to make Spendify even better!
